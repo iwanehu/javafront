@@ -26,8 +26,10 @@ export default function ChatRoom({ username, onLogout }: ChatRoomProps) {
   const socketRef = useRef<WebSocket | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const WS_URL = "wss://javachat.onrender.com/ws";
 
+const WS_URL = import.meta.env.VITE_WS_URL;
+  
+  
   // Crear mapa de usuarios usando useMemo
   const userMap = useMemo(() => {
     const map = new Map<string, string>();
