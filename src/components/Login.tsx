@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 interface LoginProps {
   onLoginSuccess: (username: string) => void;
 }
@@ -31,9 +33,11 @@ export default function Login({ onLoginSuccess }: LoginProps) {
       return;
     }
 
-    const endpoint = isRegistering 
-      ? 'https://javachat.onrender.com/api/auth/registro'
-      : 'https://javachat.onrender.com/api/auth/login';
+    const endpoint = isRegistering
+  ? `${API_URL}/api/auth/registro`
+  : `${API_URL}/api/auth/login`;
+
+  
 
     try {
       const response = await fetch(endpoint, {

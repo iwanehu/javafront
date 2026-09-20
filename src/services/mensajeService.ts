@@ -1,7 +1,8 @@
 // src/services/mensajeService.ts
 import type { Mensaje } from '../types';
 
-const API_URL = 'https://javachat.onrender.com/api';
+const API_URL = `${import.meta.env.VITE_API_URL}/api`;
+
 
 export const mensajeService = {
   // Obtener historial de mensajes

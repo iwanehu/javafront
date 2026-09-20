@@ -26,6 +26,10 @@ export default function ChatRoom({ username, onLogout }: ChatRoomProps) {
   const socketRef = useRef<WebSocket | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+<<<<<<< HEAD
+=======
+const WS_URL = import.meta.env.VITE_WS_URL;
+>>>>>>> 79a14d0 (Connect frontend to PostgreSQL VPS backend)
 
 const WS_URL = import.meta.env.VITE_WS_URL;
   
